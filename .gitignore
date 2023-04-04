@@ -1,32 +1,134 @@
-# Prerequisites
-*.d
+using System;
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+namespace ConsoleApp5
+{
+    internal class MainClass
+    {
+        static void BubbleSort(int[] arr)
+        {
+            int n = arr.Length;
+            for (int i = 0; i < n - 1; i++)
+            {
+                for (int j = 0; j < n - i - 1; j++)
+                {
+                    if (arr[j] > arr[j + 1])
+                    {
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
 
-# Precompiled Headers
-*.gch
-*.pch
+            }
+        }
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+        static void BubbleSort(long[] arr)
+        {
+            long n = arr.Length;
+            for (int i = 0; i < n - 1; i++)
+            {
+                for (int j = 0; j < n - i - 1; j++)
+                {
+                    if (arr[j] > arr[j + 1])
+                    {
+                        long temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
 
-# Fortran module files
-*.mod
-*.smod
+            }
+        }
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+        public static void BubbleSort(char[] arr)
+        {
+            long n = arr.Length;
+            for (int i = 0; i < n - 1; i++)
+            {
+                for (int j = 0; j < n - i - 1; j++)
+                {
+                    int currentElement = (int)arr[j];
+                    int nextElement = (int)arr[j + 1];
 
-# Executables
-*.exe
-*.out
-*.app
+                    if (currentElement > nextElement)
+                    {
+                        char temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+
+            }
+        }
+
+
+    }
+
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            char[] charArray = new char[3];
+                for (int i = 0; i < charArray.Length; i++)
+            {
+                charArray[i] = Convert.ToChar(Console.ReadLine);
+            }
+
+
+            Sorter sorter = new Sorter();
+            sorter.Sort(charArray);
+
+
+
+            for (int i = 0; i < charArray.Length; i++)
+            {
+                Console.WriteLine(charArray[i]);
+            }
+
+
+
+
+                public class Sorter
+                { 
+            public int[] Sort(int[] unsorted)
+            {
+                int[] longsortedarray = new int[unsorted.Length];
+                for (int i = 0; i < unsorted.Length - 1; i++)
+
+                {
+                    for (int j = 0; j < unsorted.Length - i - 1; j++)
+                    {
+
+                        if (unsorted[j] > unsorted[j + 1])
+                        {
+                            int temp = longsortedarray[j];
+                            longsortedarray[j] = longsortedarray[j + 1];
+                            longsortedarray[j + 1] = temp;
+                        }
+                    }
+
+                }
+                return longsortedarray;
+            }
+
+         
+
+
+
+            //Console.WriteLine("Enter some text:");
+            //string userInput = Console.ReadLine();
+            //string letters = " ";
+
+            //foreach (char character in userInput)
+            //{
+            //    if (Char.IsLetterOrDigit(character))
+            //    {
+            //        letters += character;
+            //    }
+            //}
+
+            //Console.WriteLine("Letters : " + letters);
+        }
+    }
+}
+
